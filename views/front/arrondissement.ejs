@@ -1,0 +1,23 @@
+<%- include("../header.ejs")%>
+<html>
+    <body>
+        <div>
+            <% if (arrondissement > 1) { %>
+                <a href="/arrondissement/<%= arrondissement - 1 %>">Précédent</a>
+            <% } %>
+            <h2>Arrondissement <%= arrondissement %></h2>
+            <% if (arrondissement < 20) { %>
+                <a href="/arrondissement/<%= arrondissement + 1 %>">Suivant</a>
+            <% } %>
+        </div>
+        <h3>Nombre de balade : <%= nbBalades %></h3> 
+        <ul>
+            <% balades.forEach(function(balade) { %>
+                <li>
+                    <div>Nom :<%= balade.nom %></div> 
+                    <a href="/id/<%= balade.id %>">Voir cette balade</a>
+                </li>
+            <% }); %> 
+        </ul>
+    </body>
+</html>

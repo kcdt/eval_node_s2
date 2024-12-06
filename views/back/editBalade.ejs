@@ -1,0 +1,32 @@
+<%- include("../header.ejs")%>
+<html>
+    <% if (balade) { %>
+        <form method="post" action="/update-one/<%= balade._id %>">
+            <label>
+                <input type="text" name="nom" value="<%= balade.nom %>">
+            </label>
+            <label>
+                <input type="number" name="arrondissement" value="<%= balade.arrondissement %>">
+            </label>
+            <label>
+                <textarea name="texte_intro">
+                    <%= balade.texte_intro %>
+                </textarea>
+            </label>
+            <input type="submit" value="Envoyer">
+        </form>
+    <% } else { %>
+        <form method="post" action="/add">
+            <label>
+                <input type="text" name="nom" placeholder="nom">
+            </label>
+            <label>
+                <input type="number" name="arrondissement" placeholder="arrondissement">
+            </label>
+            <label>
+                <textarea name="texte_intro" placeholder="texte_intro"></textarea>
+            </label>
+            <input type="submit" value="Envoyer">
+        </form>
+    <% } %>
+</html>

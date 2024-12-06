@@ -1,0 +1,20 @@
+<%- include("../header.ejs")%>
+<html>
+    <body>
+        <a href="/add">Ajouter une balade</a>
+        <ul>
+            <% balades.forEach(function(balade) { %>
+                <li>
+                    <div>ID :<%= balade._id %></div> 
+                    <div>Nom :<%= balade.nom %></div> 
+                    <div>Arrondissement :<%= balade.arrondissement %></div>
+                    <div>Texte :<%= balade.texte_intro %></div>
+                    <div>Date de publication :<%= balade.date_publication %></div>
+                    <% if (url !== "/id/" + balade.id) { %>
+                        <a href="/id/<%= balade.id %>">Voir cette balade</a>
+                    <% } %>
+                </li>
+            <% }); %> 
+        </ul>
+    </body>
+</html>

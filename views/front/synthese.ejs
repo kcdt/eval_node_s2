@@ -1,0 +1,13 @@
+<%- include("../header.ejs")%>
+<html>
+    <body>
+        <ul>
+            <% results.forEach(function(arrondissement) { %>
+                <li>
+                    <h3>Arrondissement <%= arrondissement._id %></h3>
+                    <h4>Nombre de balade : <%= arrondissement.count %></h4>
+                </li>
+            <% }); %> 
+        </ul>
+    </body>
+</html>
